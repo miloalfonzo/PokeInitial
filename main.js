@@ -25,8 +25,7 @@ buttonSwitch.addEventListener("click", () => {
             document.getElementById("img1").src = imagenes[2];
         break;
         default:
-            alert("Solo tienes tres opciones, vuelve a elegir.");
-            
+            window.location.reload(false);           
     }  
     
     if (document.body.className == "body"){
