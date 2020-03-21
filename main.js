@@ -26,6 +26,7 @@ buttonSwitch.addEventListener("click", () => {
         break;
         case "25":
             document.getElementById("img1").src = imagenes[3];
+        break;
         default:
             window.location.reload(false);           
     }  
