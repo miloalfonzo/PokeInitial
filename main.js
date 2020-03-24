@@ -1,17 +1,14 @@
-function play() {
-    var audio = document.getElementById("audio");
-    audio.volume = 0.1;
-    audio.play();
-}
+const eleccion = prompt('Profesor Oak: Es hora de elegir a tu compañero. Elige entre el 1, 2 y 3');
 
-var eleccion = prompt('Profesor Oak: Es hora de elegir a tu compañero. Elige entre el 1, 2 y 3');
+const imagenes = ["/img/charman.png", "/img/bulba.png", "/img/squirtle.png", "/img/pika.png"];
 
-var imagenes = ["/img/charman.png", "/img/bulba.png", "/img/squirtle.png", "/img/pika.png"];
-
+let click = 0;
 
 const buttonSwitch = document.querySelector("#switch");
 
 buttonSwitch.addEventListener("click", () => {
+    click++;
+
     document.body.classList.toggle("dark");
     buttonSwitch.classList.toggle("active");
     document.getElementById("img1").style.cursor = "pointer";
@@ -34,10 +31,19 @@ buttonSwitch.addEventListener("click", () => {
     
     if (document.body.className == "body"){
     document.getElementById("img1").src = "/img/pokeball.png" ;
-} 
-})
+    } 
 
-var whichOne = document.querySelector("#img1");
+    if (click % 2 == 0) {
+        let audio = document.getElementById("close");
+        audio.volume = 0.1;
+        audio.play();
+    } else {
+        let audio = document.getElementById("open");
+        audio.volume = 0.1;
+        audio.play();
+    }
+})
+let whichOne = document.querySelector("#img1");
 
 whichOne.addEventListener("click", () => {
     switch(eleccion){
